@@ -115,7 +115,7 @@ const renderWord = (wordData) => {
     // Render Isthilahi
     const labels = [
         { k: 'madhi', l: 'Madhi' }, { k: 'mudhori', l: 'Mudhori' }, { k: 'mashdar', l: 'Mashdar' },
-        { k: 'fail', l: 'Fa\\'il' }, { k: 'maful', l: 'Maf\\'ul' }, { k: 'amr', l: 'Amr' },
+        { k: 'fail', l: "Fa'il" }, { k: 'maful', l: "Maf'ul" }, { k: 'amr', l: 'Amr' },
         { k: 'nahi', l: 'Nahi' }, { k: 'makan', l: 'Makan/Zaman' }, { k: 'alat', l: 'Alat' }
     ];
     if(istilahGrid) {
