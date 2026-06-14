@@ -34,8 +34,25 @@ Format JSON harus sama persis dengan struktur berikut:
       "translation": "Terjemahan kalimat"
     }
   ],
-  "isthilahi": null,
-  "lughowi": []
+  "isthilahi": {
+    "madhi": "", "mudhori": "", "mashdar": "", "fail": "", "maful": "", "amr": "", "nahi": "", "makan": "", "alat": ""
+  },
+  "lughowi": [
+    { "pronounName": "هُوَ", "pronounIndo": "Dia (Lk. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "هُمَا", "pronounIndo": "Mereka berdua (Lk)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "هُمْ", "pronounIndo": "Mereka (Lk. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "هِيَ", "pronounIndo": "Dia (Pr. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "هُمَا", "pronounIndo": "Mereka berdua (Pr)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "هُنَّ", "pronounIndo": "Mereka (Pr. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "أَنْتَ", "pronounIndo": "Kamu (Lk. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "أَنْتُمَا", "pronounIndo": "Kamu berdua (Lk)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "أَنْتُمْ", "pronounIndo": "Kalian (Lk. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "أَنْتِ", "pronounIndo": "Kamu (Pr. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "أَنْتُمَا", "pronounIndo": "Kamu berdua (Pr)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "أَنْتُنَّ", "pronounIndo": "Kalian (Pr. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "أَنَا", "pronounIndo": "Saya", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "نَحْنُ", "pronounIndo": "Kami/Kita", "madhiConjugation": "", "mudhoriConjugation": "" }
+  ]
 }`;
 
     const prompt = `Tolong analisis kata bahasa Arab berikut: '${q}' dan berikan hasil analisis lengkapnya sesuai skema JSON. Pastikan format output hanya JSON valid tanpa markdown tambahan.`;
@@ -50,7 +67,7 @@ Format JSON harus sama persis dengan struktur berikut:
     };
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
