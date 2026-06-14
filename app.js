@@ -125,7 +125,7 @@ const renderWord = (wordData) => {
     // Render Lughowi
     if(lughowiBody) {
         lughowiBody.innerHTML = '';
-        if(wordData.lughowi) {
+        if(wordData.lughowi && wordData.lughowi.length > 0) {
             wordData.lughowi.forEach(l => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
@@ -135,6 +135,16 @@ const renderWord = (wordData) => {
                 `;
                 lughowiBody.appendChild(tr);
             });
+        }
+    }
+
+    // Hide entire tashrif section if not a verb
+    const tashrifSection = document.querySelector('.tashrif-section');
+    if (tashrifSection) {
+        if (!wordData.isthilahi && (!wordData.lughowi || wordData.lughowi.length === 0)) {
+            tashrifSection.style.display = 'none';
+        } else {
+            tashrifSection.style.display = 'block';
         }
     }
 };
