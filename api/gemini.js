@@ -90,4 +90,4 @@ Format JSON harus sama persis dengan struktur berikut:
     } catch (error) {
         return res.status(500).json({ success: false, error: "Internal Server Error: " + error.message });
     }
-};
+}; 
