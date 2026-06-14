@@ -74,7 +74,8 @@ Format JSON harus sama persis dengan struktur berikut:
         });
 
         if (!response.ok) {
-            return res.status(500).json({ success: false, error: `Gemini API Error: ${response.statusText}` });
+            const errText = await response.text();
+            return res.status(500).json({ success: false, error: `Gemini API Error (${response.status}): ${errText || response.statusText}` });
         }
 
         const data = await response.json();
