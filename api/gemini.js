@@ -67,7 +67,7 @@ Format JSON harus sama persis dengan struktur berikut:
     };
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
@@ -90,4 +90,4 @@ Format JSON harus sama persis dengan struktur berikut:
     } catch (error) {
         return res.status(500).json({ success: false, error: "Internal Server Error: " + error.message });
     }
-}; 
+};
