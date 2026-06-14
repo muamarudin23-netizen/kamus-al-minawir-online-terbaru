@@ -1,18 +1,29 @@
+try {
+
 // --- Theme Toggle ---
 const themeBtn = document.getElementById('themeBtn');
 const toggleTheme = () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    themeBtn.innerText = next === 'dark' ? '☀️' : '🌙';
-    localStorage.setItem('theme', next);
+    try {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        if (themeBtn) themeBtn.innerText = next === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', next);
+    } catch (e) {
+        console.warn('LocalStorage not available for theme');
+    }
 };
 
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    themeBtn.innerText = savedTheme === 'dark' ? '☀️' : '🌙';
+try {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        if (themeBtn) themeBtn.innerText = savedTheme === 'dark' ? '☀️' : '🌙';
+    }
+} catch (e) {
+    console.warn('LocalStorage access denied');
 }
+
 if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
 
 // --- Navigation Tabs ---
@@ -231,5 +242,13 @@ tTabs.forEach(t => {
 
 // Trigger initial state safely
 setTimeout(() => {
-    performSearch('sajada');
+    try {
+        performSearch('sajada');
+    } catch(e) {
+        alert("Error in initial search: " + e.message);
+    }
 }, 500);
+
+} catch (globalError) {
+    alert("Kamus Error: " + globalError.message + "\nLine: " + globalError.lineNumber);
+}
