@@ -11,43 +11,34 @@ module.exports = async (req, res) => {
 
     const systemInstruction = `
 Anda adalah pakar bahasa Arab dan penyusun Kamus Al-Munawwir Arab-Indonesia.
-Tugas Anda adalah menganalisis kata bahasa Arab atau akar kata yang diberikan, lalu menerjemahkannya dan menyusun Tashrif (morfologi) lengkapnya dalam format JSON yang tepat.
-Format JSON harus sama persis dengan struktur berikut dan tidak mengandung karakter markdown di luar blok json:
+Tugas Anda adalah menganalisis kata bahasa Arab yang diberikan.
+
+PENTING:
+Jika kata tersebut adalah KATA KERJA (Fi'il), berikan tabel Tashrif Isthilahi dan Lughowi.
+Jika kata tersebut adalah KATA BENDA (Isim Jamid, Isim Alam, dll seperti kursi, buku), KOSONGKAN nilai isthilahi menjadi null dan lughowi menjadi array kosong []. Jangan paksa mentashrif kata benda baku!
+
+Format JSON harus sama persis dengan struktur berikut:
 {
-  "arabicRoot": "جَلَسَ",                  
-  "transliteration": "Jalasa",            
-  "rootLetters": "ج - ل - s",             
-  "wazanType": "ثُلَاثِيٌّ مُجَرَّدٌ",        
-  "wazanPattern": "فَعَلَ - يَفْعِلُ",    
-  "wazanBab": "صَحِيْحٌ سَالِمٌ",          
-  "briefDefinition": "Duduk, menetap",    
+  "arabicRoot": "Kata asli/akar kata",                  
+  "transliteration": "Cara baca",            
+  "rootLetters": "Huruf - akar",             
+  "wazanType": "Jenis Wazan (Isi '-' jika bukan fi'il)",        
+  "wazanPattern": "Pola Wazan (Isi '-' jika bukan fi'il)",    
+  "wazanBab": "Bab Wazan (Isi '-' jika bukan fi'il)",          
+  "briefDefinition": "Definisi singkat",    
   "definitions": [                        
     {
       "number": 1,
-      "type": "فِعْلٌ ثُلَاثِيٌّ مُجَرَّدٌ",
-      "expression": "جَلَسَ عَلَى الْكُرْسِيِّ",
-      "translation": "Duduk di atas kursi"
+      "type": "Jenis kata (Isim/Fi'il)",
+      "expression": "Contoh kalimat",
+      "translation": "Terjemahan kalimat"
     }
   ],
-  "isthilahi": {                          
-    "madhi": "جَلَسَ",
-    "mudhori": "يَجْلِسُ",
-    "mashdar": "جُلُوسًا",
-    "fail": "جَالِسٌ",
-    "maful": "مَجْلُوسٌ",
-    "amr": "اِجْلِسْ",
-    "nahi": "لَا تَجْلِسْ",
-    "makan": "مَجْلِسٌ",
-    "zaman": "مَجْلِسٌ",
-    "alat": "مِجْلَسٌ"
-  },
-  "lughowi": [                            
-    { "pronounName": "هُوَ", "pronounIndo": "Dia (Lk. Tunggal)", "madhiConjugation": "جَلَسَ", "mudhoriConjugation": "يَجْلِسُ" },
-    { "pronounName": "هُمَا", "pronounIndo": "Mereka Berdua (Lk)", "madhiConjugation": "جَلَسَا", "mudhoriConjugation": "يَجْلِسَانِ" }
-  ]
+  "isthilahi": null,
+  "lughowi": []
 }`;
 
-    const prompt = `Tolong analisis kata bahasa Arab berikut: '${q}' dan berikan hasil analisis lengkapnya sesuai skema JSON.`;
+    const prompt = `Tolong analisis kata bahasa Arab berikut: '${q}' dan berikan hasil analisis lengkapnya sesuai skema JSON. Pastikan format output hanya JSON valid tanpa markdown tambahan.`;
 
     const payload = {
         contents: [{ parts: [{ text: prompt }] }],
