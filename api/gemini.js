@@ -67,11 +67,26 @@ Format JSON harus sama persis dengan struktur berikut:
     };
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
+        let response;
+        let retries = 3;
+        
+        while (retries > 0) {
+            response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.status === 503) {
+                retries--;
+                if (retries === 0) break; // Jika sudah mencoba 3x tetap Overload, menyerah.
+                
+                // Tunggu 1.5 detik sebelum memukul server Google lagi secara diam-diam
+                await new Promise(resolve => setTimeout(resolve, 1500));
+            } else {
+                break; // Jika sukses, keluar dari loop
+            }
+        }
 
         if (!response.ok) {
             const errText = await response.text();
