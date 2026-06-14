@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Al-Munawwir",
+  "description": "Arabic-Indonesian dictionary \u0026 smart grammatical morphologic analyzer (Tashrif). Explore verbs, nouns, particles and search Quranic root words.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
