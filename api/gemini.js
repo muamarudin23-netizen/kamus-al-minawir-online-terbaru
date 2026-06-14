@@ -38,20 +38,20 @@ Format JSON harus sama persis dengan struktur berikut:
     "madhi": "", "mudhori": "", "mashdar": "", "fail": "", "maful": "", "amr": "", "nahi": "", "makan": "", "alat": ""
   },
   "lughowi": [
-    { "pronounName": "هُوَ", "pronounIndo": "Dia (Lk. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "هُمَا", "pronounIndo": "Mereka berdua (Lk)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "هُمْ", "pronounIndo": "Mereka (Lk. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "هِيَ", "pronounIndo": "Dia (Pr. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "هُمَا", "pronounIndo": "Mereka berdua (Pr)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "هُنَّ", "pronounIndo": "Mereka (Pr. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "أَنْتَ", "pronounIndo": "Kamu (Lk. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "أَنْتُمَا", "pronounIndo": "Kamu berdua (Lk)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "أَنْتُمْ", "pronounIndo": "Kalian (Lk. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "أَنْتِ", "pronounIndo": "Kamu (Pr. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "أَنْتُمَا", "pronounIndo": "Kamu berdua (Pr)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "أَنْتُنَّ", "pronounIndo": "Kalian (Pr. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "أَنَا", "pronounIndo": "Saya", "madhiConjugation": "", "mudhoriConjugation": "" },
-    { "pronounName": "نَحْنُ", "pronounIndo": "Kami/Kita", "madhiConjugation": "", "mudhoriConjugation": "" }
+    { "pronounName": "\\u0647\\u064f\\u0648\\u064e", "pronounIndo": "Dia (Lk. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0647\\u064f\\u0645\\u064e\\u0627", "pronounIndo": "Mereka berdua (Lk)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0647\\u064f\\u0645\\u0652", "pronounIndo": "Mereka (Lk. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0647\\u0650\\u064a\\u064e", "pronounIndo": "Dia (Pr. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0647\\u064f\\u0645\\u064e\\u0627", "pronounIndo": "Mereka berdua (Pr)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0647\\u064f\\u0646\\u0651\\u064e", "pronounIndo": "Mereka (Pr. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0623\\u064e\\u0646\\u0652\\u062a\\u064e", "pronounIndo": "Kamu (Lk. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0623\\u064e\\u0646\\u0652\\u062a\\u064f\\u0645\\u064e\\u0627", "pronounIndo": "Kamu berdua (Lk)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0623\\u064e\\u0646\\u0652\\u062a\\u064f\\u0645\\u0652", "pronounIndo": "Kalian (Lk. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0623\\u064e\\u0646\\u0652\\u062a\\u0650", "pronounIndo": "Kamu (Pr. Tunggal)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0623\\u064e\\u0646\\u0652\\u062a\\u064f\\u0645\\u064e\\u0627", "pronounIndo": "Kamu berdua (Pr)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0623\\u064e\\u0646\\u0652\\u062a\\u064f\\u0646\\u0651\\u064e", "pronounIndo": "Kalian (Pr. Jamak)", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0623\\u064e\\u0646\\u064e\\u0627", "pronounIndo": "Saya", "madhiConjugation": "", "mudhoriConjugation": "" },
+    { "pronounName": "\\u0646\\u064e\\u062d\\u0652\\u0646\\u064f", "pronounIndo": "Kami/Kita", "madhiConjugation": "", "mudhoriConjugation": "" }
   ]
 }`;
 
